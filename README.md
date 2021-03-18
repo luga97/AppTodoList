@@ -11,3 +11,5 @@ Una aplicación simple de Tareas que carga información de una [API](https://git
  * Navigation
 
 La API conectada por defecto en esta APP se encuentra desplegada en heroku, en caso de que falle [AQUI](https://github.com/luga97/todoListAPI.git) tienes un enlace en el cual podras descargar el codigo y probarlo con un serivdor local, o desplegando la api en su PaaS de preferencia.
+
+si tienes problemas para compilar la aplicacion, o solo quieres probar la Aplicación puedes sencillamente descargarla desde este [enlace](https://mega.nz/file/mfRwBL4Z#ZjMcbrLzIhUNpudP8VYsqmA52FD6IzfhB7Q6ZKJfvj4) :)
