@@ -2,10 +2,10 @@ package com.example.AppTodoList.di
 
 import android.content.Context
 import com.example.AppTodoList.data.local.AppDatabase
-import com.example.AppTodoList.data.local.ItemDao
-import com.example.AppTodoList.data.remote.itemRemoteDataSource
-import com.example.AppTodoList.data.remote.ItemService
-import com.example.AppTodoList.data.repository.ItemRepository
+import com.example.AppTodoList.data.local.TasksDao
+import com.example.AppTodoList.data.remote.TasksRemoteDataSource
+import com.example.AppTodoList.data.remote.TasksService
+import com.example.AppTodoList.data.repository.TasksRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -24,7 +24,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideRetrofit(gson: Gson) : Retrofit = Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/api/")
+        .baseUrl("https://app-todo-list-2021.herokuapp.com/api/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
@@ -32,11 +32,11 @@ object AppModule {
     fun provideGson(): Gson = GsonBuilder().create()
 
     @Provides
-    fun provideItemService(retrofit: Retrofit): ItemService = retrofit.create(ItemService::class.java)
+    fun provideTasksService(retrofit: Retrofit): TasksService = retrofit.create(TasksService::class.java)
 
     @Singleton
     @Provides
-    fun provideItemRemoteDataSource(itemService: ItemService) = itemRemoteDataSource(itemService)
+    fun provideItemRemoteDataSource(tasksService: TasksService) = TasksRemoteDataSource(tasksService)
 
     @Singleton
     @Provides
@@ -44,11 +44,11 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideItemDao(db: AppDatabase) = db.itemDao()
+    fun provideTasksmDao(db: AppDatabase) = db.tasksDao()
 
     @Singleton
     @Provides
-    fun provideRepository(remoteDataSource: itemRemoteDataSource,
-                          localDataSource: ItemDao) =
-        ItemRepository(remoteDataSource, localDataSource)
+    fun provideRepository(remoteDataSource: TasksRemoteDataSource,
+                          localDataSource: TasksDao) =
+        TasksRepository(remoteDataSource, localDataSource)
 }

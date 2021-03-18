@@ -3,21 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ItemFragment">
+    app:startDestination="@id/TaskFragment">
 
     <fragment
-        android:id="@+id/ItemFragment"
-        android:name="com.example.AppTodoList.ui.items.ItemFragment"
-        android:label="Items"
-        tools:layout="@layout/main_fragment">
+        android:id="@+id/TaskFragment"
+        android:name="com.example.AppTodoList.ui.tasks.TasksFragment"
+        android:label="Tareas"
+        tools:layout="@layout/tasks_fragment">
         <action
-            android:id="@+id/action_charactersFragment_to_characterDetailFragment"
-            app:destination="@id/ItemDetailFragment" />
+            android:id="@+id/edit_task_action"
+            app:destination="@id/EditTaskFragment" />
+        <action
+            android:id="@+id/create_task_action"
+            app:destination="@id/CreateTaskFragment" />
 
     </fragment>
     <fragment
-        android:id="@+id/ItemDetailFragment"
-        android:name="com.example.AppTodoList.ui.itemdetail.ItemDetailFragment"
-        android:label="Item Detail"
-        tools:layout="@layout/data_detail_fragment" />
+        android:id="@+id/EditTaskFragment"
+        android:name="com.example.AppTodoList.ui.edittask.EditTaskFragment"
+        android:label="Editar Tarea"
+        tools:layout="@layout/edit_item_fragment">
+        <action
+            android:id="@+id/edit_to_tasks"
+            app:destination="@id/TaskFragment"
+            app:popUpTo="@id/TaskFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/CreateTaskFragment"
+        android:name="com.example.AppTodoList.ui.createtask.CreateTaskFragment"
+        android:label="Crear Tarea"
+        tools:layout="@layout/create_task_fragment">
+        <action
+            android:id="@+id/create_to_tasks"
+            app:destination="@id/TaskFragment"
+            app:popUpTo="@id/TaskFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
