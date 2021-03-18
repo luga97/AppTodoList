@@ -11,12 +11,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.AppTodoList.R
 import com.example.AppTodoList.data.entities.Task
 import com.example.AppTodoList.databinding.CreateTaskFragmentBinding
-import com.example.AppTodoList.databinding.EditItemFragmentBinding
-import com.example.AppTodoList.ui.edittask.EditTaskViewModel
 import com.example.AppTodoList.utils.Resource
 import com.example.AppTodoList.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * fragmento para crear tareas nuevas
+ * @author Luis Garcia
+ */
 @AndroidEntryPoint
 class CreateTaskFragment : Fragment() {
 
@@ -40,7 +42,7 @@ class CreateTaskFragment : Fragment() {
     }
 
     private fun createTask() {
-        viewModel.setTask(Task(
+        viewModel.createTask(Task(
                 title = binding.titleInput.text.toString(),
                 description =  binding.descriptionInput.text.toString()
         )).observe(viewLifecycleOwner) {

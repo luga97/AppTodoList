@@ -9,6 +9,16 @@ import com.example.AppTodoList.data.entities.Task
 import com.example.AppTodoList.data.repository.TasksRepository
 import com.example.AppTodoList.utils.Resource
 
+/**
+ * VieModel Exclusivo para EditTaskFragment
+ * nos permite precargar los datos de la tarea
+ * en los campos de texto antes de editarla y
+ * asi proveer un UX un poco mas agradable para el usuario
+ *
+ * Tambien nos permite enviar la modificacion a la capa de datos
+ *@param repository repositorio que nos permita acceder a la capa de datos
+ * @author Luis Garcia
+ */
 class EditTaskViewModel @ViewModelInject constructor(
     private val repository: TasksRepository
 ) : ViewModel() {

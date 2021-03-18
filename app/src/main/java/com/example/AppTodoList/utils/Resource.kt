@@ -1,5 +1,7 @@
 package com.example.AppTodoList.utils
-
+/**
+ * Clase Auxiliar que nos permite realizar consultas a la API
+ */
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 
     enum class Status {

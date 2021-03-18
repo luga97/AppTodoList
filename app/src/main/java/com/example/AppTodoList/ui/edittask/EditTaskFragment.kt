@@ -15,6 +15,10 @@ import com.example.AppTodoList.utils.Resource
 import com.example.AppTodoList.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Fragmento para editar las tareas ya existentes
+ * @author Luis Garcia
+ */
 @AndroidEntryPoint
 class EditTaskFragment : Fragment() {
 

@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.AppTodoList.R
@@ -18,17 +17,22 @@ import com.example.AppTodoList.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+/**
+ * Fragmento Principal, que muestra una lista de las tareas en el servidor,
+ * en caso de que no se pueda obtener dicha informacion utilizara los datos guardados en cache
+ * @author Luis Garcia
+ */
 @AndroidEntryPoint
-class TasksFragment : Fragment(), ItemsAdapter.ItemListener {
+class TasksFragment : Fragment(), TasksAdapter.TaskListener {
 
     private var binding: TasksFragmentBinding by autoCleared()
     private val viewModel: TasksViewModel by viewModels()
-    private lateinit var adapter: ItemsAdapter
+    private lateinit var adapter: TasksAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = TasksFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -44,7 +48,7 @@ class TasksFragment : Fragment(), ItemsAdapter.ItemListener {
 
     private fun setupRecyclerView() {
 
-        adapter = ItemsAdapter(this)
+        adapter = TasksAdapter(this)
         binding.charactersRv.layoutManager = LinearLayoutManager(requireContext())
         binding.charactersRv.adapter = adapter
     }

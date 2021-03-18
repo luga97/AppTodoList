@@ -17,6 +17,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+/**
+ * Modulo de hilt con un contexto global de la aplicacion
+ * que nos provee de todas las dependencias necesarias
+ * @author Luis Garcia
+ */
 @Module
 @InstallIn(ApplicationComponent::class)
 object AppModule {

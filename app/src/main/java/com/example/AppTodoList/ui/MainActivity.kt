@@ -10,7 +10,10 @@ import com.example.AppTodoList.R
 import com.example.AppTodoList.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
+/**
+ * Actividad Principal
+ * @author Luis Garcia
+ */
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

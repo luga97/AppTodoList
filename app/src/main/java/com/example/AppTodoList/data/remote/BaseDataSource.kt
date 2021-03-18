@@ -4,6 +4,12 @@ import com.example.AppTodoList.utils.Resource
 import retrofit2.Response
 import timber.log.Timber
 
+/**
+ * Clase base que contiene la abstraccion de las consultas con retrofit
+ * y nos permitira mas adelante reutilizar su logica, optimizando asi
+ * la reutilizacion del codigo
+ * @author Luis Garcia
+ */
 abstract class BaseDataSource {
 
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Resource<T> {

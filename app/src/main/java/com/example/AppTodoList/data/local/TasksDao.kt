@@ -7,6 +7,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.AppTodoList.data.entities.Task
 
+/**
+ * Data Access Object para realizar consultas y modificaciones a la tabla de datos
+ * @author Luis Garcia
+ */
 @Dao
 interface TasksDao {
 

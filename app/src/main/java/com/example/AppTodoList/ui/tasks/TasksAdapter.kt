@@ -8,9 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.AppTodoList.data.entities.Task
 import com.example.AppTodoList.databinding.ItemTaskFragmentBinding
 
-class ItemsAdapter(private val listener: ItemListener) : RecyclerView.Adapter<CharacterViewHolder>() {
-
-    interface ItemListener {
+/**
+ * Adaptador para el RecyclerView del fragmento principal
+ * @author Luis Garcia
+ */
+class TasksAdapter(private val listener: TaskListener) : RecyclerView.Adapter<CharacterViewHolder>() {
+    /**
+     * Listener del evento Click para editar una tarea especifica
+     */
+    interface TaskListener {
         fun editItemOnCLick(characterId: String)
     }
 
@@ -32,7 +38,7 @@ class ItemsAdapter(private val listener: ItemListener) : RecyclerView.Adapter<Ch
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) = holder.bind(items[position])
 }
 
-class CharacterViewHolder(private val itemBinding: ItemTaskFragmentBinding, private val listener: ItemsAdapter.ItemListener) : RecyclerView.ViewHolder(itemBinding.root),
+class CharacterViewHolder(private val itemBinding: ItemTaskFragmentBinding, private val listener: TasksAdapter.TaskListener) : RecyclerView.ViewHolder(itemBinding.root),
     View.OnClickListener {
 
     private lateinit var task: Task
