@@ -1,8 +1,7 @@
-# RickAndMorty - Android Architecture Sample
+# TodoListApp - Ejemplo de Arquitectura Android
 
-<img align="right" src="https://github.com/sberoch/RickAndMorty-AndroidArchitectureSample/raw/master/assets/characters.jpg" width="200">
+Una aplicación simple de Tareas que carga información de una [API] (https://github.com/luga97/todoListAPI.git) creada en nodeJS con express,  para mostrar un poco como usar algunas de las mejores prácticas en el desarrollo de Android. Incluyendo: 
 
-A Rick And Morty simple app that loads information from [The Rick and Morty API](https://rickandmortyapi.com/) to show one approach to using some of the best practices in Android Development. Including:  
  * ViewModel
  * LiveData
  * Hilt (for dependency injection)
@@ -10,8 +9,5 @@ A Rick And Morty simple app that loads information from [The Rick and Morty API]
  * Retrofit
  * Room
  * Navigation
- 
- ## You should also take a look at
- * [Guide to app architecture](https://developer.android.com/jetpack/guide)
- * [Android architecture samples](https://github.com/android/architecture-samples)
- * [Eli-Fox LEGO Catalog project](https://proandroiddev.com/android-architecture-starring-kotlin-coroutines-jetpack-mvvm-room-paging-retrofit-and-dagger-7749b2bae5f7)
+
+La API conectada por defecto en esta APP se encuentra desplegada en heroku, en caso de que falle [AQUI] (https://github.com/luga97/todoListAPI.git) tienes un enlace en el cual podras descargar el codigo y probarlo con un serivdor local, o desplegando la api en su PaaS de preferencia.
